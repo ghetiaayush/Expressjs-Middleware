@@ -29,3 +29,34 @@ app.get("/products", (req, resp) => {
 });
 
 app.listen(3200);
+
+
+// Types of Middleware
+
+// Application-level Middleware
+// Registered using: app.use() or app.get()
+// Purpose: Used to apply middleware globally or to specific routes in the main app.
+// Example Use: Logging, request parsing, etc.
+
+// Router-level Middleware
+// Registered using: router.use()
+// Purpose: Works like application-level middleware, but applies to route instances (e.g., for grouping /admin or /user routes).
+// Example Use: Authorization checks in a specific route group.
+
+// Built-in Middleware
+// Comes with Express.js.
+// Common example: express.static() to serve static files (like CSS, images).
+// Purpose: Provides ready-to-use functionality without extra installation.
+
+// Error-handling Middleware
+// Defined with four arguments: (err, req, res, next)
+// Purpose: Catches and handles errors across the application.
+// Example Use: Sending custom error messages, logging errors.
+
+// Third-party Middleware
+// Installed via npm, and used with require() or import.
+// Purpose: Add advanced functionalities.
+// Common examples:
+// morgan (logging)
+// cors (Cross-Origin Resource Sharing)
+// body-parser (parsing form data)
